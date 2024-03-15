@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp1
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         ///  Required designer variable.
@@ -75,11 +75,16 @@
             // 
             // txtSenha
             // 
+            txtSenha.CharacterCasing = CharacterCasing.Lower;
             txtSenha.Location = new Point(6, 105);
+            txtSenha.MaxLength = 50;
             txtSenha.Name = "txtSenha";
+            txtSenha.PlaceholderText = "Digite aqui sua senha";
             txtSenha.Size = new Size(498, 23);
             txtSenha.TabIndex = 3;
             txtSenha.UseSystemPasswordChar = true;
+            txtSenha.Enter += txtSenha_Enter;
+            txtSenha.Leave += txtSenha_Leave;
             // 
             // label2
             // 
@@ -94,8 +99,11 @@
             // 
             txtUsuario.Location = new Point(6, 50);
             txtUsuario.Name = "txtUsuario";
+            txtUsuario.PlaceholderText = "Digite aqui seu login";
             txtUsuario.Size = new Size(498, 23);
             txtUsuario.TabIndex = 1;
+            txtUsuario.Enter += txtUsuario_Enter;
+            txtUsuario.Leave += txtUsuario_Leave;
             // 
             // label1
             // 
@@ -106,14 +114,14 @@
             label1.TabIndex = 0;
             label1.Text = "Úsuario:";
             // 
-            // Form1
+            // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(534, 234);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
-            Name = "Form1";
+            Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Suporte Online";
             groupBox1.ResumeLayout(false);
